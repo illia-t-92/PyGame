@@ -1,3 +1,5 @@
+import random
+
 class Card:
     
     def __init__(self,suit, value):
@@ -18,5 +20,10 @@ class Deck:
     def size(self):
         return len(self._cards)
 
-    def get_card(self, position):
-        return self._cards[position]
+    def shuffle(self):
+        for i in range(len(self._cards)-1, 0, -1):
+            r=random.randint(0,i)
+            self._cards[i], self._cards[r] = self._cards[r], self._cards[i]
+
+    def draw_card(self):
+        return self._cards.pop()
