@@ -27,3 +27,8 @@ class Deck:
 
     def draw_card(self):
         return self._cards.pop()
+
+
+konec
+
+jojo
