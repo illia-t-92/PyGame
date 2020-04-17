@@ -32,3 +32,6 @@ class Deck:
 konec
 
 jojo
+
+
+eshche ne konec
