@@ -1,7 +1,7 @@
 import random
 
 class Card:
-    
+
     def __init__(self,suit, value):
         self.suit=suit
         self.value=value
@@ -10,8 +10,8 @@ class Card:
         print("{} of {}".format(self.value, self.suit))
 
 class Deck:
-    
-    suits=["Spades", "Clubs", "Hearts", "Diamonds"] 
+
+    suits=["Spades", "Clubs", "Hearts", "Diamonds"]
     values=[str(n) for n in range(2,11)]+list('JQKA')
 
     def __init__(self):
@@ -28,10 +28,4 @@ class Deck:
     def draw_card(self):
         return self._cards.pop()
 
-
-konec
-
-jojo
-
-
-eshche ne konec
+new branch
