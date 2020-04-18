@@ -5,14 +5,16 @@ class Card:
     def __init__(self,suit, value):
         self.suit=suit
         self.value=value
+        letters={14:'A', 13:'K', 12:'Q', 11:'J'}
+        self.letter=letters.get(self.value, str(self.value))
 
     def show(self):
-        print("{} of {}".format(self.value, self.suit))
+        print ('{} of {}'.format(self.letter, self.suit))
 
 class Deck:
     
     suits=["Spades", "Clubs", "Hearts", "Diamonds"] 
-    values=[str(n) for n in range(2,11)]+list('JQKA')
+    values=[int(n) for n in range(2,15)]
 
     def __init__(self):
         self._cards=[Card(suit, value) for suit in self.suits for value in self.values]
@@ -28,10 +30,3 @@ class Deck:
     def draw_card(self):
         return self._cards.pop()
 
-
-konec
-
-jojo
-
-
-eshche ne konec
