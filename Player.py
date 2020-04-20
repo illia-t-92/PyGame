@@ -28,6 +28,6 @@ class Player:
         return len(self.hand)
 
     def play_card(self, suit, letter):
-        selected_card=next((Card for Card in self.hand if Card.suit=suit and Card.letter=str(letter), None)
+        selected_card=next((Card for Card in self.hand if Card.suit==suit and Card.letter==str(letter), None)
         return selected_card
     
