@@ -14,9 +14,10 @@ class Player:
          for card in self.hand:
             card.show()
 
-    def trumps(self, trump_suit):
+    def trumps(self):
         return [card for card in self.hand if card.trump==True]
-
+    
+    @property
     def lowest_trump(self):
         trumps=sorted(self.trumps(),key=lambda card: card.value)
         if not trumps:
@@ -28,6 +29,9 @@ class Player:
         return len(self.hand)
 
     def play_card(self, suit, letter):
-        selected_card=next((Card for Card in self.hand if Card.suit==suit and Card.letter==str(letter), None)
-        return selected_card
+        for card in self.hand:
+            if card.suit==suit and card.letter==str(letter):
+                return card
+            else:
+                return None            
     
