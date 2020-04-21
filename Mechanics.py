@@ -165,13 +165,13 @@ while game == "on":
                 if i.weight == Offender_card.weight and answ == 1:
                     Dokidyvanie = "yes"
 
-            if otboy == 0 and len(Offence_card_list) >= 5 or len(Offence_card_list) >= len(Defender.hand):  # Не работает
+            if otboy == 0 and len(Offence_card_list) >= 5 or len(Offence_card_list) >= len(Defender.hand):
                 Dokidyvanie = "fin-2"
                 Perebor = "yes"
                 print(f"-- No more dokidyvanie -- #1")
 
 
-        if otboy == 0 and len(Offence_card_list) >= 5 or len(Offence_card_list) >= len(Defender.hand):  # Не работает
+        if otboy == 0 and len(Offence_card_list) >= 5 or len(Offence_card_list) >= len(Defender.hand):
             Dokidyvanie = "fin-2"
             Perebor = "yes"
             print(f"-- No more dokidyvanie -- #2")
@@ -229,7 +229,7 @@ while game == "on":
                             if crd.weight == Offender_card.weight:
                                 Dokidyvanie = "yes-1"
 
-                    if otboy == 0 and len(Offence_card_list) >= 5 or len(Offence_card_list) >= len(Defender.hand): # Не работает
+                    if otboy == 0 and len(Offence_card_list) >= 5 or len(Offence_card_list) >= len(Defender.hand):
                         Dokidyvanie = "fin-2"
                         Perebor = "yes"
                         print (f"-- No more dokidyvanie --#3")
@@ -339,10 +339,6 @@ while game == "on":
 
 
         for Pl in Others_list:  # Не работает
-            print("len(Pl.hand)", Pl.name, len(Pl.hand))
-            print("_-_-_-_-_-_-")
-            Pl.show_hand()
-            print("_-_-_-_-_-_-")
             if len(Pl.hand) == 0:
                 print (f"{Pl.name} wins and leaves the match")
                 Others_list.remove(Pl)
