@@ -21,9 +21,9 @@ class Fool:
 
     def get_trump(self):
         self.deck.shuffle()
-        trump_suit=self.deck._cards[-1].suit #getting the suit of the last card in the deck
-        self.deck.set_trump(trump_suit)
-        print(f'Trump suit is {trump_suit}')
+        self.trump_suit=self.deck._cards[-1].suit #getting the suit of the last card in the deck
+        self.deck.set_trump(self.trump_suit)
+
 
     def deal_cards(self):
         loop_count=0
@@ -31,7 +31,8 @@ class Fool:
             for player in self._players:
                 player.draw_card(self.deck)
                 loop_count+=1
-
+        print(f'Trump suit is {self.trump_suit}')
+    
     def first_player(self): #indentify who moves first based on the lowest trump card value
         trumps={}
         for player in self._players:
@@ -39,11 +40,10 @@ class Fool:
                 trumps.update({player.lowest_trump.value: player})
         sorted_trumps=sorted(trumps.keys())
         lowest_key=sorted_trumps[0]
-        first_player=trumps[lowest_key]
+        self.first_player=trumps[lowest_key]
  
-        self._players.insert(0, first_player)#move player to the first position in the list of players
-        print(f'{first_player.name} has {player.lowest_trump.show()}. He moves first.')
-        return first_player #returns Player object
+        self._players.insert(0, self.first_player) #move player to the first position in the list of players
+        print(f'{self.first_player.name} has {self.first_player.lowest_trump.value} of {self.first_player.lowest_trump.suit}. He moves first.')
 
 """
     def next_move(self):
