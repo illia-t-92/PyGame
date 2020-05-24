@@ -29,9 +29,11 @@ class Player:
         return len(self.hand)
 
     def play_card(self, suit, letter):
-        for card in self.hand:
-            if card.suit==suit and card.letter==str(letter):
-                return card
-            else:
-                return None            
+        self.card=Card(suit, letter)
+        if self.card in self.hand:
+            return self.card
+        else:
+            raise ValueError("No such card on hand")
+
+        
     

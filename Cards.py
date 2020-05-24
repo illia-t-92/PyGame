@@ -31,13 +31,42 @@ class Deck:
 
 class Card:
     
-    def __init__(self,suit, value):
+    def __init__(self,suit, letter):
         self.suit=suit
-        self.value=value
+        self.letter=str(letter)
         self.trump=False
-        letters={14:'A', 13:'K', 12:'Q', 11:'J'}
-        self.letter=letters.get(self.value, str(self.value))
+        values={'A':14, 'K':13, 'Q':12, 'J':11}
+        self.value=values.get(self.letter, int(self.letter))
 
     def show(self):
         print ('{} of {}'.format(self.letter, self.suit))
 
+    def __eq__(self, other):
+        if self.suit==other.suit:
+            return self.value==other.value and self.suit==other.suit
+        else:
+            NotImplemented
+
+    def __gt__(self, other):
+        if self.suit==other.suit:
+            return self.value>other.value
+        else:
+            NotImplemented
+    
+    def __lt__(self, other):
+        if self.suit==other.suit:
+            return self.value<other.value
+        else:
+            NotImplemented
+
+    def __ge__(self, other):
+        if self.suit==other.suit:
+            return self.value>=other.value
+        else:
+            raise NotImplementedError('Comparison of different suits is not implemented')
+
+    def __le__(self, other):
+        if self.suit==other.suit:
+            return self.value<=self.value
+        else:
+            raise NotImplementedError('Comparison of different suits is not implemented')
